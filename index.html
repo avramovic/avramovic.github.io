@@ -175,11 +175,12 @@
 
 		cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () {
 			var avr_offset = $('.avram').offset();
+			var avr_x = .left;
+			var avr_y = $('.avram').offset().top;
 			window.agent.show();
-			window.agent.moveTo(avr_offset.left-150, avr_offset.top+50);
+			window.agent.moveTo(avr_offset.left-150, avr_offset+50);
 			window.agent.speak("Hello there! Do you know Nemanja?");
-			avr_offset = $('.avram').offset();
-			window.agent.gestureAt(avr_offset.left+50, avr_offset.top+50);
+			window.agent.play('GestureLeft');
 			window.agent.speak("This guy! He writes awesome code!");
 			window.agent.animate();
 		});
