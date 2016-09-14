@@ -176,8 +176,8 @@
 		cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () {
 			var avr_x = $('.avram').offset().left;
 			var avr_y = $('.avram').offset().top;
-			window.agent.moveTo(100, 200);
 			window.agent.show();
+			window.agent.moveTo(100, 200);
 			window.agent.speak("Hello there! Do you know Nemanja?");
 			window.agent.gestureAt(avr_x+50, avr_y+50);
 			window.agent.speak("This guy! He writes awesome code!");
@@ -186,6 +186,10 @@
 
 		$(document).on('dblclick', '.clippy', function() {
 			window.agent.hide();
+		});
+
+		$(document).on('mouseup', '.clippy', function() {
+			window.agent.animate();
 		});
 
 	});
