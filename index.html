@@ -183,10 +183,11 @@
 			window.agent.gestureAt(avr_x+50, avr_y+50);
 			window.agent.speak("This guy! He writes awesome code!");
 			window.agent.speak("You should definitely hire him!");
-			window.agent.hide()
-			window.agent.show();
 			window.agent.speak("No, really! You should!");
 			window.agent.animate();
+		});
+
+		$(document).on('dblclick', '.clippy', function() {
 			window.agent.hide();
 		});
 
