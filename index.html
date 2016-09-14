@@ -174,12 +174,12 @@
 
 
 		cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () {
-			var avr_x = $('.avram').offset().left;
-			var avr_y = $('.avram').offset().top;
+			var avr_offset = $('.avram').offset();
 			window.agent.show();
-			window.agent.moveTo(avr_x-150, avr_y+50);
+			window.agent.moveTo(avr_offset.left-150, avr_offset.top+50);
 			window.agent.speak("Hello there! Do you know Nemanja?");
-			window.agent.gestureAt(avr_x+50, avr_y+50);
+			avr_offset = $('.avram').offset();
+			window.agent.gestureAt(avr_offset.left+50, avr_offset.top+50);
 			window.agent.speak("This guy! He writes awesome code!");
 			window.agent.animate();
 		});
