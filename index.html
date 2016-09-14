@@ -36,7 +36,7 @@
 			<!-- ===== vCard Navigation ===== -->
 			<div class="row w">
 				<div class="col-md-4">
-					<img class="img-responsive" src="assets/img/avatar.jpg" alt="">
+					<img class="img-responsive avram" src="assets/img/avatar.jpg" alt="">
 					<ul class="nav nav-tabs nav-stacked" id="myTab">
 					  <li class="active"><a href="#about">About</a></li>
 					  <li><a href="#profile">Profile</a></li>
@@ -156,7 +156,9 @@
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="assets/js/jquery.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/clippy.min.js?"></script>
+	<script src="assets/js/clippy.min.js"></script>
+	<script src="//cdn.rawgit.com/namuol/cheet.js/master/cheet.min.js"
+        type="text/javascript"></script>
 	<script>
 	var agent;
 	var counter=0;
@@ -171,16 +173,23 @@
 		});
 
 
-		$(document).mousemove(function(e) {
-			if(counter ==0 && e.clientY <= 30)
-			{
-				window.agent.moveTo(100, 100);
-				window.agent.show();
-				window.agent.speak("Are you sure you want to leave?");
-				window.agent.animate();
-				counter++;
-			}
+		cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () {
+			var avr_x = $('.avram').offset().left;
+			var avr_y = $('.avram').offset().top;
+			window.agent.moveTo(100, 200);
+			window.agent.show();
+			window.agent.speak("Hello there!");
+			window.agent.speak("Do you know Nemanja?");
+			window.agent.gestureAt(avr_x+50, avr_y+50);
+			window.agent.speak("This guy! He writes awesome code!");
+			window.agent.speak("You should definitely hire him!");
+			window.agent.hide()
+			window.agent.show();
+			window.agent.speak("No, really! You should!");
+			window.agent.animate();
+			window.agent.hide();
 		});
+
 	});
 
 	</script>
