@@ -163,3 +163,7 @@ grey {
 	color: #bdc3c7;
 	font-weight: 700;
 }
+
+.centered > img {
+    border: 1px grey solid;
+}
